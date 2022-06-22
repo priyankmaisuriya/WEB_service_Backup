@@ -1,0 +1,840 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="DisplayAllEmployee">
+        <s:complexType />
+      </s:element>
+      <s:element name="DisplayAllEmployeeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DisplayAllEmployeeResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ProcedureDisplayAllEmployee">
+        <s:complexType />
+      </s:element>
+      <s:element name="ProcedureDisplayAllEmployeeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ProcedureDisplayAllEmployeeResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddEmployee">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="firstname" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="lastname" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="gender" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="dob" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="city" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="dateofjoining" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="salary" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddEmployeeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AddEmployeeResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ProcedureAddEmployee">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FirstName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="LastName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Gender" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="DateOfBirth" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="City" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="DateOfJoining" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="Salary" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ProcedureAddEmployeeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ProcedureAddEmployeeResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddJsonConfig">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="json_value" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddJsonConfigResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AddJsonConfigResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DisplayJsonConfig">
+        <s:complexType />
+      </s:element>
+      <s:element name="DisplayJsonConfigResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DisplayJsonConfigResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DisplayAllDatabase">
+        <s:complexType />
+      </s:element>
+      <s:element name="DisplayAllDatabaseResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DisplayAllDatabaseResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="demodb">
+        <s:complexType />
+      </s:element>
+      <s:element name="demodbResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="demodbResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DisplayAllTables">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="db_name" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DisplayAllTablesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DisplayAllTablesResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DisplayAllColumns">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="db_name" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TABLE_NAME" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DisplayAllColumnsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DisplayAllColumnsResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="string" nillable="true" type="s:string" />
+      <s:element name="boolean" type="s:boolean" />
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="DisplayAllEmployeeSoapIn">
+    <wsdl:part name="parameters" element="tns:DisplayAllEmployee" />
+  </wsdl:message>
+  <wsdl:message name="DisplayAllEmployeeSoapOut">
+    <wsdl:part name="parameters" element="tns:DisplayAllEmployeeResponse" />
+  </wsdl:message>
+  <wsdl:message name="ProcedureDisplayAllEmployeeSoapIn">
+    <wsdl:part name="parameters" element="tns:ProcedureDisplayAllEmployee" />
+  </wsdl:message>
+  <wsdl:message name="ProcedureDisplayAllEmployeeSoapOut">
+    <wsdl:part name="parameters" element="tns:ProcedureDisplayAllEmployeeResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddEmployeeSoapIn">
+    <wsdl:part name="parameters" element="tns:AddEmployee" />
+  </wsdl:message>
+  <wsdl:message name="AddEmployeeSoapOut">
+    <wsdl:part name="parameters" element="tns:AddEmployeeResponse" />
+  </wsdl:message>
+  <wsdl:message name="ProcedureAddEmployeeSoapIn">
+    <wsdl:part name="parameters" element="tns:ProcedureAddEmployee" />
+  </wsdl:message>
+  <wsdl:message name="ProcedureAddEmployeeSoapOut">
+    <wsdl:part name="parameters" element="tns:ProcedureAddEmployeeResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddJsonConfigSoapIn">
+    <wsdl:part name="parameters" element="tns:AddJsonConfig" />
+  </wsdl:message>
+  <wsdl:message name="AddJsonConfigSoapOut">
+    <wsdl:part name="parameters" element="tns:AddJsonConfigResponse" />
+  </wsdl:message>
+  <wsdl:message name="DisplayJsonConfigSoapIn">
+    <wsdl:part name="parameters" element="tns:DisplayJsonConfig" />
+  </wsdl:message>
+  <wsdl:message name="DisplayJsonConfigSoapOut">
+    <wsdl:part name="parameters" element="tns:DisplayJsonConfigResponse" />
+  </wsdl:message>
+  <wsdl:message name="DisplayAllDatabaseSoapIn">
+    <wsdl:part name="parameters" element="tns:DisplayAllDatabase" />
+  </wsdl:message>
+  <wsdl:message name="DisplayAllDatabaseSoapOut">
+    <wsdl:part name="parameters" element="tns:DisplayAllDatabaseResponse" />
+  </wsdl:message>
+  <wsdl:message name="demodbSoapIn">
+    <wsdl:part name="parameters" element="tns:demodb" />
+  </wsdl:message>
+  <wsdl:message name="demodbSoapOut">
+    <wsdl:part name="parameters" element="tns:demodbResponse" />
+  </wsdl:message>
+  <wsdl:message name="DisplayAllTablesSoapIn">
+    <wsdl:part name="parameters" element="tns:DisplayAllTables" />
+  </wsdl:message>
+  <wsdl:message name="DisplayAllTablesSoapOut">
+    <wsdl:part name="parameters" element="tns:DisplayAllTablesResponse" />
+  </wsdl:message>
+  <wsdl:message name="DisplayAllColumnsSoapIn">
+    <wsdl:part name="parameters" element="tns:DisplayAllColumns" />
+  </wsdl:message>
+  <wsdl:message name="DisplayAllColumnsSoapOut">
+    <wsdl:part name="parameters" element="tns:DisplayAllColumnsResponse" />
+  </wsdl:message>
+  <wsdl:message name="DisplayAllEmployeeHttpGetIn" />
+  <wsdl:message name="DisplayAllEmployeeHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="ProcedureDisplayAllEmployeeHttpGetIn" />
+  <wsdl:message name="ProcedureDisplayAllEmployeeHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="AddEmployeeHttpGetIn">
+    <wsdl:part name="firstname" type="s:string" />
+    <wsdl:part name="lastname" type="s:string" />
+    <wsdl:part name="gender" type="s:string" />
+    <wsdl:part name="dob" type="s:string" />
+    <wsdl:part name="city" type="s:string" />
+    <wsdl:part name="dateofjoining" type="s:string" />
+    <wsdl:part name="salary" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="AddEmployeeHttpGetOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="ProcedureAddEmployeeHttpGetIn">
+    <wsdl:part name="FirstName" type="s:string" />
+    <wsdl:part name="LastName" type="s:string" />
+    <wsdl:part name="Gender" type="s:string" />
+    <wsdl:part name="DateOfBirth" type="s:string" />
+    <wsdl:part name="City" type="s:string" />
+    <wsdl:part name="DateOfJoining" type="s:string" />
+    <wsdl:part name="Salary" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ProcedureAddEmployeeHttpGetOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="AddJsonConfigHttpGetIn">
+    <wsdl:part name="json_value" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="AddJsonConfigHttpGetOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="DisplayJsonConfigHttpGetIn" />
+  <wsdl:message name="DisplayJsonConfigHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="DisplayAllDatabaseHttpGetIn" />
+  <wsdl:message name="DisplayAllDatabaseHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="demodbHttpGetIn" />
+  <wsdl:message name="demodbHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="DisplayAllTablesHttpGetIn">
+    <wsdl:part name="db_name" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="DisplayAllTablesHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="DisplayAllColumnsHttpGetIn">
+    <wsdl:part name="db_name" type="s:string" />
+    <wsdl:part name="TABLE_NAME" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="DisplayAllColumnsHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="DisplayAllEmployeeHttpPostIn" />
+  <wsdl:message name="DisplayAllEmployeeHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="ProcedureDisplayAllEmployeeHttpPostIn" />
+  <wsdl:message name="ProcedureDisplayAllEmployeeHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="AddEmployeeHttpPostIn">
+    <wsdl:part name="firstname" type="s:string" />
+    <wsdl:part name="lastname" type="s:string" />
+    <wsdl:part name="gender" type="s:string" />
+    <wsdl:part name="dob" type="s:string" />
+    <wsdl:part name="city" type="s:string" />
+    <wsdl:part name="dateofjoining" type="s:string" />
+    <wsdl:part name="salary" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="AddEmployeeHttpPostOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="ProcedureAddEmployeeHttpPostIn">
+    <wsdl:part name="FirstName" type="s:string" />
+    <wsdl:part name="LastName" type="s:string" />
+    <wsdl:part name="Gender" type="s:string" />
+    <wsdl:part name="DateOfBirth" type="s:string" />
+    <wsdl:part name="City" type="s:string" />
+    <wsdl:part name="DateOfJoining" type="s:string" />
+    <wsdl:part name="Salary" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ProcedureAddEmployeeHttpPostOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="AddJsonConfigHttpPostIn">
+    <wsdl:part name="json_value" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="AddJsonConfigHttpPostOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="DisplayJsonConfigHttpPostIn" />
+  <wsdl:message name="DisplayJsonConfigHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="DisplayAllDatabaseHttpPostIn" />
+  <wsdl:message name="DisplayAllDatabaseHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="demodbHttpPostIn" />
+  <wsdl:message name="demodbHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="DisplayAllTablesHttpPostIn">
+    <wsdl:part name="db_name" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="DisplayAllTablesHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="DisplayAllColumnsHttpPostIn">
+    <wsdl:part name="db_name" type="s:string" />
+    <wsdl:part name="TABLE_NAME" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="DisplayAllColumnsHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:portType name="demowebserviceSoap">
+    <wsdl:operation name="DisplayAllEmployee">
+      <wsdl:input message="tns:DisplayAllEmployeeSoapIn" />
+      <wsdl:output message="tns:DisplayAllEmployeeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ProcedureDisplayAllEmployee">
+      <wsdl:input message="tns:ProcedureDisplayAllEmployeeSoapIn" />
+      <wsdl:output message="tns:ProcedureDisplayAllEmployeeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddEmployee">
+      <wsdl:input message="tns:AddEmployeeSoapIn" />
+      <wsdl:output message="tns:AddEmployeeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ProcedureAddEmployee">
+      <wsdl:input message="tns:ProcedureAddEmployeeSoapIn" />
+      <wsdl:output message="tns:ProcedureAddEmployeeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddJsonConfig">
+      <wsdl:input message="tns:AddJsonConfigSoapIn" />
+      <wsdl:output message="tns:AddJsonConfigSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DisplayJsonConfig">
+      <wsdl:input message="tns:DisplayJsonConfigSoapIn" />
+      <wsdl:output message="tns:DisplayJsonConfigSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DisplayAllDatabase">
+      <wsdl:input message="tns:DisplayAllDatabaseSoapIn" />
+      <wsdl:output message="tns:DisplayAllDatabaseSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="demodb">
+      <wsdl:input message="tns:demodbSoapIn" />
+      <wsdl:output message="tns:demodbSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DisplayAllTables">
+      <wsdl:input message="tns:DisplayAllTablesSoapIn" />
+      <wsdl:output message="tns:DisplayAllTablesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DisplayAllColumns">
+      <wsdl:input message="tns:DisplayAllColumnsSoapIn" />
+      <wsdl:output message="tns:DisplayAllColumnsSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="demowebserviceHttpGet">
+    <wsdl:operation name="DisplayAllEmployee">
+      <wsdl:input message="tns:DisplayAllEmployeeHttpGetIn" />
+      <wsdl:output message="tns:DisplayAllEmployeeHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ProcedureDisplayAllEmployee">
+      <wsdl:input message="tns:ProcedureDisplayAllEmployeeHttpGetIn" />
+      <wsdl:output message="tns:ProcedureDisplayAllEmployeeHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddEmployee">
+      <wsdl:input message="tns:AddEmployeeHttpGetIn" />
+      <wsdl:output message="tns:AddEmployeeHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ProcedureAddEmployee">
+      <wsdl:input message="tns:ProcedureAddEmployeeHttpGetIn" />
+      <wsdl:output message="tns:ProcedureAddEmployeeHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddJsonConfig">
+      <wsdl:input message="tns:AddJsonConfigHttpGetIn" />
+      <wsdl:output message="tns:AddJsonConfigHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DisplayJsonConfig">
+      <wsdl:input message="tns:DisplayJsonConfigHttpGetIn" />
+      <wsdl:output message="tns:DisplayJsonConfigHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DisplayAllDatabase">
+      <wsdl:input message="tns:DisplayAllDatabaseHttpGetIn" />
+      <wsdl:output message="tns:DisplayAllDatabaseHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="demodb">
+      <wsdl:input message="tns:demodbHttpGetIn" />
+      <wsdl:output message="tns:demodbHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DisplayAllTables">
+      <wsdl:input message="tns:DisplayAllTablesHttpGetIn" />
+      <wsdl:output message="tns:DisplayAllTablesHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DisplayAllColumns">
+      <wsdl:input message="tns:DisplayAllColumnsHttpGetIn" />
+      <wsdl:output message="tns:DisplayAllColumnsHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="demowebserviceHttpPost">
+    <wsdl:operation name="DisplayAllEmployee">
+      <wsdl:input message="tns:DisplayAllEmployeeHttpPostIn" />
+      <wsdl:output message="tns:DisplayAllEmployeeHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ProcedureDisplayAllEmployee">
+      <wsdl:input message="tns:ProcedureDisplayAllEmployeeHttpPostIn" />
+      <wsdl:output message="tns:ProcedureDisplayAllEmployeeHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddEmployee">
+      <wsdl:input message="tns:AddEmployeeHttpPostIn" />
+      <wsdl:output message="tns:AddEmployeeHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ProcedureAddEmployee">
+      <wsdl:input message="tns:ProcedureAddEmployeeHttpPostIn" />
+      <wsdl:output message="tns:ProcedureAddEmployeeHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddJsonConfig">
+      <wsdl:input message="tns:AddJsonConfigHttpPostIn" />
+      <wsdl:output message="tns:AddJsonConfigHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DisplayJsonConfig">
+      <wsdl:input message="tns:DisplayJsonConfigHttpPostIn" />
+      <wsdl:output message="tns:DisplayJsonConfigHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DisplayAllDatabase">
+      <wsdl:input message="tns:DisplayAllDatabaseHttpPostIn" />
+      <wsdl:output message="tns:DisplayAllDatabaseHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="demodb">
+      <wsdl:input message="tns:demodbHttpPostIn" />
+      <wsdl:output message="tns:demodbHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DisplayAllTables">
+      <wsdl:input message="tns:DisplayAllTablesHttpPostIn" />
+      <wsdl:output message="tns:DisplayAllTablesHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DisplayAllColumns">
+      <wsdl:input message="tns:DisplayAllColumnsHttpPostIn" />
+      <wsdl:output message="tns:DisplayAllColumnsHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="demowebserviceSoap" type="tns:demowebserviceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="DisplayAllEmployee">
+      <soap:operation soapAction="http://tempuri.org/DisplayAllEmployee" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProcedureDisplayAllEmployee">
+      <soap:operation soapAction="http://tempuri.org/ProcedureDisplayAllEmployee" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddEmployee">
+      <soap:operation soapAction="http://tempuri.org/AddEmployee" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProcedureAddEmployee">
+      <soap:operation soapAction="http://tempuri.org/ProcedureAddEmployee" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddJsonConfig">
+      <soap:operation soapAction="http://tempuri.org/AddJsonConfig" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DisplayJsonConfig">
+      <soap:operation soapAction="http://tempuri.org/DisplayJsonConfig" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DisplayAllDatabase">
+      <soap:operation soapAction="http://tempuri.org/DisplayAllDatabase" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="demodb">
+      <soap:operation soapAction="http://tempuri.org/demodb" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DisplayAllTables">
+      <soap:operation soapAction="http://tempuri.org/DisplayAllTables" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DisplayAllColumns">
+      <soap:operation soapAction="http://tempuri.org/DisplayAllColumns" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="demowebserviceSoap12" type="tns:demowebserviceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="DisplayAllEmployee">
+      <soap12:operation soapAction="http://tempuri.org/DisplayAllEmployee" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProcedureDisplayAllEmployee">
+      <soap12:operation soapAction="http://tempuri.org/ProcedureDisplayAllEmployee" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddEmployee">
+      <soap12:operation soapAction="http://tempuri.org/AddEmployee" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProcedureAddEmployee">
+      <soap12:operation soapAction="http://tempuri.org/ProcedureAddEmployee" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddJsonConfig">
+      <soap12:operation soapAction="http://tempuri.org/AddJsonConfig" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DisplayJsonConfig">
+      <soap12:operation soapAction="http://tempuri.org/DisplayJsonConfig" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DisplayAllDatabase">
+      <soap12:operation soapAction="http://tempuri.org/DisplayAllDatabase" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="demodb">
+      <soap12:operation soapAction="http://tempuri.org/demodb" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DisplayAllTables">
+      <soap12:operation soapAction="http://tempuri.org/DisplayAllTables" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DisplayAllColumns">
+      <soap12:operation soapAction="http://tempuri.org/DisplayAllColumns" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="demowebserviceHttpGet" type="tns:demowebserviceHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="DisplayAllEmployee">
+      <http:operation location="/DisplayAllEmployee" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProcedureDisplayAllEmployee">
+      <http:operation location="/ProcedureDisplayAllEmployee" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddEmployee">
+      <http:operation location="/AddEmployee" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProcedureAddEmployee">
+      <http:operation location="/ProcedureAddEmployee" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddJsonConfig">
+      <http:operation location="/AddJsonConfig" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DisplayJsonConfig">
+      <http:operation location="/DisplayJsonConfig" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DisplayAllDatabase">
+      <http:operation location="/DisplayAllDatabase" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="demodb">
+      <http:operation location="/demodb" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DisplayAllTables">
+      <http:operation location="/DisplayAllTables" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DisplayAllColumns">
+      <http:operation location="/DisplayAllColumns" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="demowebserviceHttpPost" type="tns:demowebserviceHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="DisplayAllEmployee">
+      <http:operation location="/DisplayAllEmployee" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProcedureDisplayAllEmployee">
+      <http:operation location="/ProcedureDisplayAllEmployee" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddEmployee">
+      <http:operation location="/AddEmployee" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProcedureAddEmployee">
+      <http:operation location="/ProcedureAddEmployee" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddJsonConfig">
+      <http:operation location="/AddJsonConfig" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DisplayJsonConfig">
+      <http:operation location="/DisplayJsonConfig" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DisplayAllDatabase">
+      <http:operation location="/DisplayAllDatabase" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="demodb">
+      <http:operation location="/demodb" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DisplayAllTables">
+      <http:operation location="/DisplayAllTables" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DisplayAllColumns">
+      <http:operation location="/DisplayAllColumns" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="demowebservice">
+    <wsdl:port name="demowebserviceSoap" binding="tns:demowebserviceSoap">
+      <soap:address location="http://localhost:64277/demowebservice.asmx" />
+    </wsdl:port>
+    <wsdl:port name="demowebserviceSoap12" binding="tns:demowebserviceSoap12">
+      <soap12:address location="http://localhost:64277/demowebservice.asmx" />
+    </wsdl:port>
+    <wsdl:port name="demowebserviceHttpGet" binding="tns:demowebserviceHttpGet">
+      <http:address location="http://localhost:64277/demowebservice.asmx" />
+    </wsdl:port>
+    <wsdl:port name="demowebserviceHttpPost" binding="tns:demowebserviceHttpPost">
+      <http:address location="http://localhost:64277/demowebservice.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
